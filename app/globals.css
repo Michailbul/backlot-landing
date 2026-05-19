@@ -1,26 +1,22 @@
 /* ═══════════════════════════════════════════════════════
    Backlot — landing page
    Brand tokens: laniameda studio/brand/ (Design System v2.0)
+   Fonts injected by next/font as --font-display/body/mono.
    ═══════════════════════════════════════════════════════ */
 
 :root {
   /* Tier 1 — Base */
-  --coral: #F26157;
+  --coral: #f26157;
   --carbon: #191919;
-  --teal: #79B791;
-  --linen: #FFF4EA;
+  --teal: #79b791;
+  --linen: #fff4ea;
 
   /* Tier 2 — Theme */
-  --obsidian: #0A0805;
-  --bone: #F0EBE8;
+  --obsidian: #0a0805;
+  --bone: #f0ebe8;
 
   /* Brand mark */
-  --ember: #FF8C42;
-
-  /* Fonts */
-  --font-display: 'Darker Grotesque', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --ember: #ff8c42;
 }
 
 .theme-dark {
@@ -30,14 +26,21 @@
   --text-muted: rgba(240, 235, 232, 0.42);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   background: var(--bg);
   color: var(--text-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-body), "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -76,8 +79,15 @@ body {
 }
 
 @keyframes breathe {
-  0%, 100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1); }
-  50%      { opacity: 1;    transform: translate(-50%, -50%) scale(1.07); }
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.07);
+  }
 }
 
 /* ── Chrome (header / footer) ──────────────────────────── */
@@ -92,13 +102,15 @@ body {
   padding: 1.9rem clamp(1.5rem, 5vw, 4rem);
 }
 
-.chrome-foot { margin-top: auto; }
+.chrome-foot {
+  margin-top: auto;
+}
 
 .wordmark {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-weight: 900;
   font-size: 1.15rem;
   letter-spacing: 0.02em;
@@ -120,7 +132,7 @@ body {
 }
 
 .chrome-meta {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -143,7 +155,7 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: clamp(0.72rem, 1.5vw, 0.86rem);
   font-weight: 700;
   letter-spacing: 0.26em;
@@ -154,14 +166,16 @@ body {
 }
 
 .headline {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: clamp(3.4rem, 11vw, 9rem);
   line-height: 0.9;
   letter-spacing: -0.035em;
   max-width: 16ch;
 }
 
-.line { display: block; }
+.line {
+  display: block;
+}
 
 .line-soft {
   font-weight: 500;
@@ -202,13 +216,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 500;
   font-size: 1.02rem;
   text-decoration: none;
   border-radius: 999px;
   padding: 0.95rem 1.7rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
 }
 
 .btn-primary {
@@ -223,12 +240,16 @@ body {
   box-shadow: 0 12px 38px rgba(255, 140, 66, 0.42);
 }
 
-.btn-primary:active { transform: translateY(0); }
+.btn-primary:active {
+  transform: translateY(0);
+}
 
-.gh { flex-shrink: 0; }
+.gh {
+  flex-shrink: 0;
+}
 
 .actions-note {
-  font-family: var(--font-mono);
+  font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -238,13 +259,25 @@ body {
 /* ── Animation ─────────────────────────────────────────── */
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glow { animation: none; }
-  .eyebrow, .line-soft, .line-accent, .sub, .actions {
+  .glow {
+    animation: none;
+  }
+  .eyebrow,
+  .line-soft,
+  .line-accent,
+  .sub,
+  .actions {
     animation: none;
     opacity: 1;
   }
@@ -253,8 +286,17 @@ body {
 /* ── Responsive ────────────────────────────────────────── */
 
 @media (max-width: 560px) {
-  .chrome { padding-block: 1.4rem; }
-  .chrome-meta { display: none; }
-  .chrome-foot .chrome-meta { display: block; font-size: 0.64rem; }
-  .hero { gap: 1.3rem; }
+  .chrome {
+    padding-block: 1.4rem;
+  }
+  .chrome-meta {
+    display: none;
+  }
+  .chrome-foot .chrome-meta {
+    display: block;
+    font-size: 0.64rem;
+  }
+  .hero {
+    gap: 1.3rem;
+  }
 }
