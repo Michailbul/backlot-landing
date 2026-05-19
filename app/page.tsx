@@ -18,18 +18,15 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <p className="eyebrow">The writer&apos;s IDE for AI filmmakers</p>
-
           <h1 className="headline">
-            <span className="line line-soft">Where every draft</span>
-            <span className="line line-accent">has its own set.</span>
+            <span className="line line-soft">Claude Code wasn&apos;t built</span>
+            <span className="line line-soft">for AI filmmakers.</span>
+            <span className="line line-accent">Backlot is.</span>
           </h1>
 
           <p className="sub">
-            Backlot is a desktop studio for screenwriters who write with AI but
-            refuse to hand over the keyboard. The agent rewrites your screenplay
-            in place, you read every change, and each alternate scene runs on
-            its own — nothing overwritten, nothing lost.
+            Keep the screenplay, shotlist, and prompts in one window — for your
+            AI film.
           </p>
 
           <div className="actions">
@@ -71,9 +68,6 @@ export default function Home() {
               sizes="(max-width: 1120px) 100vw, 1120px"
             />
           </div>
-          <p className="showcase-cap">
-            Shotlist, screenplay, and agent — one window.
-          </p>
         </section>
       </main>
 

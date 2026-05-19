@@ -1,22 +1,19 @@
 /* ═══════════════════════════════════════════════════════
    Backlot — landing page
-   Brand tokens: laniameda studio/brand/ (Design System v2.0)
-   Fonts injected by next/font as --font-display/body/mono.
+   Palette matches the Backlot app: Obsidian surface, Lime accent
+   (src/renderer/styles/globals.css). Fonts via next/font.
    ═══════════════════════════════════════════════════════ */
 
 :root {
-  /* Tier 1 — Base */
-  --coral: #f26157;
-  --carbon: #191919;
-  --teal: #79b791;
-  --linen: #fff4ea;
-
-  /* Tier 2 — Theme */
+  /* Surfaces */
   --obsidian: #0a0805;
+  --carbon: #191919;
   --bone: #f0ebe8;
 
-  /* Brand mark */
-  --ember: #ff8c42;
+  /* Lime accent (#C9E34B) — primary action + headline accent */
+  --lime: #c9e34b;
+  --lime-bright: #d7ec73;
+  --lime-ink: hsl(71 51% 8%);
 }
 
 .theme-dark {
@@ -49,7 +46,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Texture: grain + ember glow ───────────────────────── */
+/* ── Texture: grain + lime glow ────────────────────────── */
 
 .grain {
   position: fixed;
@@ -71,9 +68,9 @@ body {
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle at center,
-    rgba(255, 140, 66, 0.16) 0%,
-    rgba(242, 97, 87, 0.08) 28%,
-    rgba(255, 140, 66, 0) 62%
+    rgba(201, 227, 75, 0.13) 0%,
+    rgba(201, 227, 75, 0.06) 30%,
+    rgba(201, 227, 75, 0) 62%
   );
   animation: breathe 14s ease-in-out infinite;
 }
@@ -127,8 +124,8 @@ body {
   width: 0.46em;
   height: 0.46em;
   border-radius: 50%;
-  background: var(--coral);
-  box-shadow: 0 0 14px rgba(242, 97, 87, 0.55);
+  background: var(--lime);
+  box-shadow: 0 0 14px rgba(201, 227, 75, 0.5);
 }
 
 .chrome-meta {
@@ -179,8 +176,8 @@ body {
   transform: translateX(-50%);
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 140, 66, 0.2),
-    rgba(255, 140, 66, 0) 70%
+    rgba(201, 227, 75, 0.16),
+    rgba(201, 227, 75, 0) 70%
   );
   filter: blur(46px);
   pointer-events: none;
@@ -205,31 +202,11 @@ body {
   height: auto;
 }
 
-.showcase-cap {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.eyebrow {
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(0.72rem, 1.5vw, 0.86rem);
-  font-weight: 700;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--teal);
-  opacity: 0;
-  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s forwards;
-}
-
 .headline {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(3.4rem, 11vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: -0.035em;
-  max-width: 16ch;
+  font-size: clamp(2.5rem, 6.8vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
 .line {
@@ -245,9 +222,10 @@ body {
 
 .line-accent {
   font-weight: 900;
-  color: var(--coral);
+  color: var(--lime);
+  margin-top: 0.12em;
   opacity: 0;
-  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.24s forwards;
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.26s forwards;
 }
 
 .sub {
@@ -288,15 +266,15 @@ body {
 }
 
 .btn-primary {
-  background: var(--coral);
-  color: var(--obsidian);
-  box-shadow: 0 8px 30px rgba(242, 97, 87, 0.32);
+  background: var(--lime);
+  color: var(--lime-ink);
+  box-shadow: 0 8px 30px rgba(201, 227, 75, 0.24);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: var(--ember);
-  box-shadow: 0 12px 38px rgba(255, 140, 66, 0.42);
+  background: var(--lime-bright);
+  box-shadow: 0 12px 38px rgba(201, 227, 75, 0.34);
 }
 
 .btn-primary:active {
@@ -332,7 +310,6 @@ body {
   .glow {
     animation: none;
   }
-  .eyebrow,
   .line-soft,
   .line-accent,
   .sub,
