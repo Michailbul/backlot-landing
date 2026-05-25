@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeadlineRotator } from "./headline-rotator";
 import { ThemeToggle } from "./theme-toggle";
 
 const REPO_URL = "https://github.com/Michailbul/backlot-app";
@@ -19,7 +20,10 @@ export default function Home() {
       <main>
         <section className="hero">
           <h1 className="headline">
-            <span className="line line-soft">Claude Code wasn&apos;t built</span>
+            <span className="line line-soft">
+              <HeadlineRotator />
+              {" wasn’t built"}
+            </span>
             <span className="line line-soft">for AI filmmakers.</span>
             <span className="line line-accent">Lani is.</span>
           </h1>
@@ -78,8 +82,8 @@ export default function Home() {
               Apple Silicon · macOS · or build from source
             </span>
 
-            <div className="supports">
-              <span className="supports-label">Supports</span>
+            <p className="subscription">
+              Plug in your{" "}
               <span className="support-chip">
                 <svg viewBox="0 0 256 257" aria-hidden="true">
                   <path
@@ -88,7 +92,8 @@ export default function Home() {
                   />
                 </svg>
                 Claude
-              </span>
+              </span>{" "}
+              or{" "}
               <span className="support-chip">
                 <svg viewBox="0 0 256 260" aria-hidden="true">
                   <path
@@ -97,8 +102,9 @@ export default function Home() {
                   />
                 </svg>
                 Codex
-              </span>
-            </div>
+              </span>{" "}
+              subscription
+            </p>
 
           </div>
         </section>
