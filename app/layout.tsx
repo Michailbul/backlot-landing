@@ -21,11 +21,11 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Backlot — A writer's IDE for AI filmmakers",
+  title: "Lani — A writer's IDE for AI filmmakers",
   description:
-    "Backlot is a desktop studio for screenwriters and AI filmmakers. The agent rewrites your screenplay in place, you read every change, and each alternate scene lives on its own set — nothing overwritten, nothing lost.",
+    "Lani is a desktop studio for screenwriters and AI filmmakers. The agent rewrites your screenplay in place, you read every change, and each alternate scene lives on its own set — nothing overwritten, nothing lost.",
   openGraph: {
-    title: "Backlot — A writer's IDE for AI filmmakers",
+    title: "Lani — A writer's IDE for AI filmmakers",
     description: "A desktop studio where every draft has its own set.",
     type: "website",
   },
@@ -41,6 +41,12 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} ${mono.variable} theme-dark`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(localStorage.getItem('lani-theme')==='light'){document.body.classList.remove('theme-dark');document.body.classList.add('theme-light');}}catch(e){}",
+          }}
+        />
         {children}
       </body>
     </html>

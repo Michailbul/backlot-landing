@@ -1,6 +1,6 @@
 # backlot-landing
 
-Landing page for **Backlot** — a writer's IDE for screenwriters and AI filmmakers.
+Landing page for **Lani** — a writer's IDE for screenwriters and AI filmmakers.
 
 Next.js (App Router, TypeScript). Single-screen hero. Brand system from the
 laniameda Design System v2.0 — dark Obsidian theme, Darker Grotesque / Inter /
