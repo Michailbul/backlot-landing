@@ -128,10 +128,15 @@ export default function Home() {
       </main>
 
       <footer className="chrome chrome-foot">
-        <span className="wordmark wordmark-sm">
+        <a
+          className="oss-tag"
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className="dot" aria-hidden="true" />
-          LANIAMEDA
-        </span>
+          Free &amp; open source · Apache 2.0
+        </a>
       </footer>
     </>
   );

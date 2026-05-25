@@ -129,28 +129,29 @@ body {
   margin-top: auto;
 }
 
-.wordmark {
+.oss-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-family: var(--font-display), sans-serif;
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  color: var(--text-primary);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
   text-decoration: none;
+  transition: color 0.18s ease;
 }
 
-.wordmark-sm {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
+.oss-tag:hover {
+  color: var(--text-primary);
 }
 
 .dot {
-  width: 0.46em;
-  height: 0.46em;
+  flex-shrink: 0;
+  width: 0.55em;
+  height: 0.55em;
   border-radius: 50%;
-  background: var(--lime);
+  background: var(--accent);
   box-shadow: 0 0 14px rgba(201, 227, 75, 0.5);
 }
 
@@ -359,27 +360,21 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid var(--glass-border);
-  background: var(--glass);
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--text-secondary);
   cursor: pointer;
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
   transition:
     transform 0.18s ease,
-    border-color 0.18s ease,
-    background 0.18s ease,
     color 0.18s ease;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-1px);
   color: var(--text-primary);
-  background: var(--glass-strong);
-  border-color: var(--glass-border-strong);
+  transform: translateY(-1px);
 }
 
 .theme-dark .icon-moon {
