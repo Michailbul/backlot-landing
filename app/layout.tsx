@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import { Darker_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
+import {
+  GeistPixelSquare,
+  GeistPixelGrid,
+  GeistPixelCircle,
+  GeistPixelTriangle,
+  GeistPixelLine,
+} from "geist/font/pixel";
 import "./globals.css";
 
 const display = Darker_Grotesque({
@@ -20,6 +27,15 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const pixelFonts = [
+  GeistPixelSquare,
+  GeistPixelGrid,
+  GeistPixelCircle,
+  GeistPixelTriangle,
+  GeistPixelLine,
+];
+const pixelClassName = pixelFonts.map((f) => f.variable).join(" ");
+
 export const metadata: Metadata = {
   title: "Lani — A writer's IDE for AI filmmakers",
   description:
@@ -39,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${display.variable} ${body.variable} ${mono.variable} theme-dark`}
+        className={`${display.variable} ${body.variable} ${mono.variable} ${pixelClassName} theme-dark`}
       >
         <script
           dangerouslySetInnerHTML={{

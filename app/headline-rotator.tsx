@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { PixelHeading } from "./pixel-heading";
 
 const WORDS = ["Claude Code", "Codex", "OpenClaw", "Hermes", "Cursor"];
-const CYCLE_MS = 2400;
+const CYCLE_MS = 2800;
 
 export function HeadlineRotator() {
   const [index, setIndex] = useState(0);
@@ -17,7 +18,7 @@ export function HeadlineRotator() {
 
   return (
     <span className="rotator" key={WORDS[index]}>
-      {WORDS[index]}
+      <PixelHeading>{WORDS[index]}</PixelHeading>
     </span>
   );
 }

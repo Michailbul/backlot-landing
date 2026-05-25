@@ -127,6 +127,7 @@ body {
 
 .chrome-foot {
   margin-top: auto;
+  justify-content: center;
 }
 
 .oss-tag {
@@ -260,6 +261,7 @@ body {
 .rotator {
   display: inline-block;
   white-space: nowrap;
+  color: var(--accent);
   animation: rotator-in 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -274,6 +276,41 @@ body {
     transform: translateY(0);
     filter: blur(0);
   }
+}
+
+/* ── Pixel-font heading ────────────────────────────────── */
+
+.pixel-heading {
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.pixel-char {
+  display: inline-block;
+  font-feature-settings: normal;
+  transition: font-family 0s;
+}
+
+.pixel-space {
+  display: inline-block;
+  width: 0.35em;
+}
+
+.pixel-square {
+  font-family: var(--font-geist-pixel-square), ui-monospace, monospace;
+}
+.pixel-grid {
+  font-family: var(--font-geist-pixel-grid), ui-monospace, monospace;
+}
+.pixel-circle {
+  font-family: var(--font-geist-pixel-circle), ui-monospace, monospace;
+}
+.pixel-triangle {
+  font-family: var(--font-geist-pixel-triangle), ui-monospace, monospace;
+}
+.pixel-line {
+  font-family: var(--font-geist-pixel-line), ui-monospace, monospace;
 }
 
 @media (prefers-reduced-motion: reduce) {
