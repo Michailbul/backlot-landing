@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { HeadlineRotator } from "./headline-rotator";
+import { LiquidGlassDefs } from "./liquid-glass-filter";
+import { ShowcaseCarousel } from "./showcase-carousel";
 import { ThemeToggle } from "./theme-toggle";
 
 const REPO_URL = "https://github.com/Michailbul/backlot-app";
@@ -9,6 +10,7 @@ const DOWNLOAD_URL =
 export default function Home() {
   return (
     <>
+      <LiquidGlassDefs />
       <div className="grain" aria-hidden="true" />
       <div className="glow" aria-hidden="true" />
 
@@ -36,11 +38,12 @@ export default function Home() {
           <div className="actions">
             <div className="cta-row">
               <a
-                className="btn btn-primary"
+                className="btn btn-primary btn-liquid"
                 href={DOWNLOAD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className="btn-lens" aria-hidden="true" />
                 <svg
                   className="gh"
                   viewBox="0 0 24 24"
@@ -57,11 +60,12 @@ export default function Home() {
               </a>
 
               <a
-                className="btn btn-ghost"
+                className="btn btn-ghost btn-liquid"
                 href={REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <span className="btn-lens" aria-hidden="true" />
                 <svg
                   className="gh"
                   viewBox="0 0 24 24"
@@ -84,7 +88,8 @@ export default function Home() {
 
             <p className="subscription">
               Plug in your{" "}
-              <span className="support-chip">
+              <span className="support-chip btn-liquid">
+                <span className="btn-lens" aria-hidden="true" />
                 <svg viewBox="0 0 256 257" aria-hidden="true">
                   <path
                     fill="#D97757"
@@ -94,7 +99,8 @@ export default function Home() {
                 Claude
               </span>{" "}
               or{" "}
-              <span className="support-chip">
+              <span className="support-chip btn-liquid">
+                <span className="btn-lens" aria-hidden="true" />
                 <svg viewBox="0 0 256 260" aria-hidden="true">
                   <path
                     fill="currentColor"
@@ -111,24 +117,7 @@ export default function Home() {
 
         <section className="showcase">
           <div className="frame">
-            <Image
-              className="shot shot-app-dark"
-              src="/backlot-app.png"
-              alt="Lani — the shotlist view with the screenplay, prompt parts, and the agent rail side by side"
-              width={3404}
-              height={1780}
-              priority
-              sizes="(max-width: 1120px) 100vw, 1120px"
-            />
-            <Image
-              className="shot shot-app-light"
-              src="/backlot-app-light.png"
-              alt="Lani in light theme — the shotlist view with the screenplay, prompt parts, and the agent rail side by side"
-              width={3420}
-              height={1800}
-              priority
-              sizes="(max-width: 1120px) 100vw, 1120px"
-            />
+            <ShowcaseCarousel />
           </div>
         </section>
       </main>

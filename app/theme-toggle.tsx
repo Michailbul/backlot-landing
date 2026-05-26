@@ -14,10 +14,11 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="theme-toggle"
+      className="theme-toggle btn-liquid"
       onClick={toggle}
       aria-label="Toggle light or dark theme"
     >
+      <span className="btn-lens" aria-hidden="true" />
       <svg
         className="icon-sun"
         viewBox="0 0 24 24"
